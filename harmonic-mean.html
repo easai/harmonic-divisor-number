@@ -7516,10 +7516,11 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Harmonic-Divisor-Number">Harmonic Divisor Number<a class="anchor-link" href="#Harmonic-Divisor-Number">¶</a></h1><p>A harmonic mean is the inverse of the mean of the inverse of numbers.</p>
+<h1 id="Harmonic-Divisor-Number">Harmonic Divisor Number<a class="anchor-link" href="#Harmonic-Divisor-Number">¶</a></h1><p>The harmonic mean is calculated as the reciprocal of the average of the reciprocals of a set of numbers. The formula for the harmonic mean is:</p>
 <p>$$
-H=\frac{n}{\Sigma_{i=1}^n \frac{i}{x_i}}
+H=\frac{n}{\Sigma_{i=1}^n \frac{1}{x_i}}
 $$</p>
+<p>where $n$ is the number of observations and $x_1, x_2, ..., x_n$ are the individual numbers in the series.</p>
 </div>
 </div>
 </div>
@@ -7570,7 +7571,8 @@ $\displaystyle \frac{12}{7}$
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The arthmetic means A and geometric means G are defined as follows.
+<p>The arithmetic mean $A$, also known as the average, is the sum of all the numbers in a set divided by the total count of numbers in the set. The geometric mean $G$ is a type of average that is calculated by taking the nth root of the product of a set of numbers, where n is the total count of numbers in the set.</p>
+<p>The formulas for calculating the arithmetic and geometric means are:
 $$
 A=\frac{\Sigma_{i=1}^n x_i}{n}
 $$
@@ -7646,7 +7648,8 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The harmonic divisor number is a number whose harmonic mean of its divisors is an integer.</p>
+<p>The harmonic divisor number is a number whose divisors have a harmonic mean that is an integer.</p>
+<p>The code provided below performs calculations on the divisors ranging from 1 to 9. It verifies if the harmonic means of the divisors result in whole numbers or not.</p>
 </div>
 </div>
 </div>
@@ -7713,6 +7716,17 @@ $$</p>
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Let's list the harmonic divisor numbers from 1 to 10000.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7721,7 +7735,7 @@ $$</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10000</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10001</span><span class="p">):</span>
     <span class="n">lst</span><span class="o">=</span><span class="n">divisors</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="n">h</span><span class="o">=</span><span class="n">harmonic_mean</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">simplify</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">.</span><span class="n">is_integer</span><span class="p">:</span>
